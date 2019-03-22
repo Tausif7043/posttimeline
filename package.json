@@ -1,0 +1,21 @@
+{
+  "name": "posttimeline",
+  "version": "1.0.0",
+  "description": "Post blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tausif S",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.19",
+    "password-hash": "^1.2.2",
+    "q": "^1.5.1",
+    "underscore": "^1.9.1",
+    "validator": "^10.11.0"
+  }
+}
