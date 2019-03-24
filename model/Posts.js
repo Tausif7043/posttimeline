@@ -10,7 +10,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var postSchema = new mongoose.Schema({
-   from: {type: mongoose.Schema.Types.ObjectId, required: true, trim: true, ref:'Users'}, // refers _id in user schema
+   from: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Users'
+   },
+   //from: {type: mongoose.Schema.Types.ObjectId, required: true, trim: true, ref:'Users'}, // refers _id in user schema
    title:{type:String},
    description: {type: String},
    created: {type: Date, default: Date.now()}

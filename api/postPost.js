@@ -5,18 +5,19 @@ const service = require('./service');
 const moment= require('moment');
 
 module.exports = function(req, res) { 
+
+
     //validation for User title
-    if (!validator.isEmpty(req.body.title)) {
+    if (validator.isEmpty(req.body.title)) {
         return response(res, null, "invalid title", 404);
     }
 
     let jsonData = req.body;
     jsonData.is_deleted = false; 
-    jsonData.title = req.body.title;
-    jsonData.description = req.body.description; 
-    jsonData.created = moment.format();
-    jsonData.modified = moment.format(); 
-    service.createPost(jsonData).then(function(data) {
+    jsonData.created = moment().format();
+    jsonData.modified = moment().format(); 
+    jsonData.from = req.body.user; 
+    service.createPost(jsonData).then(function(data) { 
         if (!data) {
             return response(res, null, "Failed", 500);
         }
